@@ -12,5 +12,5 @@ docker push ickyblindman/complex-worker:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=ickyblindman/complex-server:$SHA
-kubectl set image deployments/client-deployemnt client=ickyblindman/complex-client:$SHA
+kubectl set image deployments/client-deployment client=ickyblindman/complex-client:$SHA
 kubectl set image deployments/worker-deployment worker=ickyblindman/complex-worker:$SHA
