@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: icky-k8s-page-tls
+spec:
+  secretName: icky-k8s-page
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: icky-k8s.page
+  dnsNames:
+    - icky-k8s.page
+    - www.icky-8s.page
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - icky-k8s.page
+          - www.icky-k8s.page
