@@ -17,22 +17,22 @@ spec:
     - host: icky-k8s.page
       http:
         paths:
-          - path: /?(.*)
+          - path: /
             backend:
               serviceName: client-cluster-ip-service
               servicePort: 3000
-          - path: /api/?(.*)
+          - path: /api/
             backend:
               serviceName: server-cluster-ip-service
               servicePort: 5000
     - host: www.icky-k8s.page
       http:
         paths:
-          - path: /?(.*)
+          - path: /
             backend:
               serviceName: client-cluster-ip-service
               servicePort: 3000
-          - path: /api/?(.*)
+          - path: /api/
             backend:
               serviceName: server-cluster-ip-service
               servicePort: 5000
